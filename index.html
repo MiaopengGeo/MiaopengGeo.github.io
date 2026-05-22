@@ -90,64 +90,94 @@
       margin-top: 28px;
     }
 
- .project {
+ .project-card {
     margin-bottom: 55px;
-    padding: 28px;
-    border: 1px solid #e5e7eb;
-    border-radius: 18px;
+    padding: 34px;
+    border-radius: 22px;
     background: #ffffff;
-    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.06);
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.07);
 }
 
-.project-image {
+.project-label {
+    color: #2563eb;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.project-card h3 {
+    font-size: 25px;
+    color: #0f172a;
+    margin: 0 0 14px 0;
+}
+
+.project-summary {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #334155;
+    margin-bottom: 24px;
+}
+
+.project-images {
+    display: grid;
+    gap: 18px;
+    margin: 24px 0 28px 0;
+}
+
+.two-images {
+    grid-template-columns: 1fr 1fr;
+}
+
+.single-image {
+    grid-template-columns: 1fr;
+}
+
+.project-images img {
     width: 100%;
-    max-height: 360px;
+    height: 260px;
     object-fit: contain;
     background: #f8fafc;
-    border-radius: 14px;
     border: 1px solid #e5e7eb;
-    margin-bottom: 22px;
-    padding: 10px;
+    border-radius: 16px;
+    padding: 12px;
 }
 
-.project-image-small {
-    width: 100%;
-    max-height: 260px;
-    object-fit: contain;
-    background: #f8fafc;
-    border-radius: 14px;
-    border: 1px solid #e5e7eb;
-    margin: 18px 0 20px 0;
-    padding: 10px;
+.single-image img {
+    height: 360px;
 }
 
-.project:hover {
-    transform: translateY(-3px);
-    transition: 0.25s ease;
-    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.10);
+.project-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px 28px;
+    margin-top: 20px;
 }
 
-    .button {
-      display: inline-block;
-      background: #2563eb;
-      color: white;
-      text-decoration: none;
-      padding: 12px 24px;
-      border-radius: 10px;
-      margin-top: 18px;
-      font-weight: 600;
+.project-grid p {
+    font-size: 15px;
+    line-height: 1.65;
+    color: #334155;
+    margin: 0;
+}
+
+.project-grid strong {
+    color: #0f172a;
+}
+
+@media (max-width: 800px) {
+    .two-images,
+    .project-grid {
+        grid-template-columns: 1fr;
     }
 
-    .button:hover {
-      background: #1d4ed8;
+    .project-images img,
+    .single-image img {
+        height: auto;
     }
-
-    footer {
-      text-align: center;
-      padding: 45px;
-      color: #6b7280;
-      font-size: 14px;
-    }
+}
 
   </style>
 
@@ -290,72 +320,72 @@
 
 <section id="projects">
 
-```html
-<h2>Selected Projects</h2>
+    <h2>Selected Projects</h2>
 
-<div class="project">
+    <div class="project-card">
+        <div class="project-label">Project 01 · Remote Sensing & GIS</div>
+        <h3>Climate-Driven Lake Dynamics Analysis using Remote Sensing and ERA5 Data</h3>
 
-    <img src="global_lakes_map.png" class="project-image">
+        <p class="project-summary">
+            Geospatial analysis of global lake responses to drought periods using satellite altimetry,
+            ERA5 climate reanalysis data, DEM-based lake morphology and long-term hydrological time-series.
+        </p>
 
-    <h3>Climate-Driven Lake Dynamics Analysis</h3>
+        <div class="project-images two-images">
+            <img src="global_lakes_map.png" alt="Global study areas of selected lakes">
+            <img src="lake_timeseries_analysis.png" alt="Lake volume change time-series analysis">
+        </div>
 
-    <p>
-        Remote sensing and hydrological analysis of global lake responses to drought
-        using satellite altimetry, ERA5 climate data, and geospatial time-series analysis.
-    </p>
+        <div class="project-grid">
+            <p><strong>Study Area:</strong><br>Lake Victoria, Lake Michigan, Lake Malawi and Lake Urmia across Africa, North America and Asia.</p>
+            <p><strong>Data:</strong><br>Satellite altimetry, HydroSat surface water extent, ERA5 precipitation / evapotranspiration, DEM data.</p>
+            <p><strong>Methods:</strong><br>ArcGIS, QGIS, remote sensing, spatial analysis, hydrological monitoring, time-series analysis.</p>
+            <p><strong>Key Results:</strong><br>Produced global lake maps, long-term water-level trends and volume-change analysis to compare lake responses during drought periods.</p>
+        </div>
+    </div>
 
-    <img src="lake_timeseries_analysis.png" class="project-image-small">
+    <div class="project-card">
+        <div class="project-label">Project 02 · Climate Analytics & Hydrological Modeling</div>
+        <h3>Hydrological Drought Analysis & Climate Time-Series Modeling</h3>
 
-    <p>
-        <strong>Technologies:</strong>
-        ArcGIS, QGIS, Remote Sensing, ERA5,
-        Satellite Altimetry, Spatial Analysis, Hydrological Modeling
-    </p>
+        <p class="project-summary">
+            Statistical drought analysis focused on the relationship between lake-level anomalies,
+            drought indices, precipitation, evapotranspiration and basin-scale climate dynamics.
+        </p>
 
-</div>
+        <div class="project-images two-images">
+            <img src="drought_dashboard.png" alt="Lake Malawi drought dashboard">
+            <img src="climate_interaction_analysis.png" alt="Precipitation and evapotranspiration analysis">
+        </div>
 
-<div class="project">
+        <div class="project-grid">
+            <p><strong>Research Focus:</strong><br>Hydrological drought detection, climate response modeling and lake-level anomaly interpretation.</p>
+            <p><strong>Data:</strong><br>ERA5 climate reanalysis, SPI, SPEI, PDSI drought indices, satellite-derived lake water levels.</p>
+            <p><strong>Methods:</strong><br>Python, weighted least squares adjustment, statistical trend estimation, multi-variable time-series analysis.</p>
+            <p><strong>Key Results:</strong><br>Identified drought phases, compared drought indicators and visualized climate-driven hydrological responses.</p>
+        </div>
+    </div>
 
-    <img src="drought_dashboard.png" class="project-image">
+    <div class="project-card">
+        <div class="project-label">Project 03 · Statistical Data Analytics</div>
+        <h3>Statistical Data Analysis & Database Support</h3>
 
-    <h3>Hydrological Drought Analysis & Climate Time-Series Modeling</h3>
+        <p class="project-summary">
+            Applied statistical analysis and database-supported quantitative workflows at the
+            Department of Mathematics, Hong Kong Baptist University.
+        </p>
 
-    <p>
-        Statistical and climate-based drought analysis using SPI, SPEI, PDSI,
-        weighted least squares adjustment, and long-term hydrological trend estimation.
-    </p>
+        <div class="project-images single-image">
+            <img src="statistical_dashboard.png" alt="Statistical data analysis dashboard">
+        </div>
 
-    <img src="climate_interaction_analysis.png" class="project-image-small">
-
-    <p>
-        <strong>Technologies:</strong>
-        Python, Statistical Modeling,
-        Climate Analytics, ERA5 Reanalysis, Time-Series Analysis
-    </p>
-
-</div>
-
-<div class="project">
-
-    <img src="statistical_dashboard.png" class="project-image">
-
-    <h3>Statistical Data Analysis & Database Support</h3>
-
-    <p>
-        Applied statistical analysis and database-supported quantitative workflows
-        for structured data processing, forecasting, and reproducible reporting.
-    </p>
-
-    <p>
-        <strong>Technologies:</strong>
-        SPSS, MySQL, Statistical Modeling,
-        Forecasting, Time-Series Analysis, Data Cleaning
-    </p>
-
-</div>
-```
-
-
+        <div class="project-grid">
+            <p><strong>Institution:</strong><br>Department of Mathematics, Hong Kong Baptist University.</p>
+            <p><strong>Data:</strong><br>Structured statistical datasets, tabular data, database records and quantitative reporting materials.</p>
+            <p><strong>Methods:</strong><br>SPSS, MySQL, regression analysis, forecasting, data cleaning, database-supported reporting.</p>
+            <p><strong>Key Results:</strong><br>Cleaned and structured datasets, supported statistical evaluation and produced reproducible analytical reports.</p>
+        </div>
+    </div>
 
 </section>
 
